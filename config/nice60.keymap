@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2021 Nick Winans
+ *                    Colton Crowe
  *
  * SPDX-License-Identifier: MIT
  */
@@ -16,7 +17,7 @@
 	keymap {
 		compatible = "zmk,keymap";
 		
-		default_layer {
+		layer_qwerty {
 // ------------------------------------------------------------------------------------------
 // | ESC |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  -  |  =  |   BKSP   |
 // | TAB  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |   "|"   |
@@ -33,7 +34,7 @@
 			>;
 		};
 
-		rgb_layer {
+		layer_kb_ctrl {
 // ------------------------------------------------------------------------------------------------
 // | BT CLR | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10  | F11 | F12 | EFFECT REV |
 // |  BT 1   |   |  UP |   | HUEUP | SATUP | BRIUP | SPDUP |   |     |    |     |     |           |
@@ -48,6 +49,42 @@
 	&bt BT_SEL 2    &trans    &trans    &trans   &trans          &trans          &trans          &trans          &trans   &trans   &trans                          &trans
 	&bt BT_SEL 3  &trans   &trans                            &rgb_ug RGB_TOG                                      &kp PSCRN      &trans      &trans               &kp DEL
 			>;
+		};
+
+		layer_lock {
+// -------------------------------------------------------------------------------------------------------------------------------
+// |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |   None   |
+// |  None    |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |   None  |  None |  None  |
+// |   None    |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |      None      |
+// |    None    |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |         None           |
+// |   None    |   None   |   None   |                     None                      |    None   |    None    |   None  |   None   |
+// --------------------------------------------------------------------------------------------------------------------------------
+			bindings = <
+	&none   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none     &none
+	&none    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none    &none
+	&none     &none  &none  &none  &none  &none  &none  &none  &none  &none  &none    &none           &none
+	&none       &none  &none  &none  &none  &none  &none  &none  &none     &none   &none              &none
+	&none     &none    &none                &none                         &none     &none     &none   &none
+			>;
+			status = "disabled";
+		};
+
+		layer_temp {
+// -------------------------------------------------------------------------------------------------------------------------------
+// |  ESC  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |   BKSP   |
+// |  TAB    |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |   None  |  None |  None  |
+// |  CAPS    |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |      None      |
+// |   SHIFT    |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |        SHIFT          |
+// |   CTL    |    WIN   |    ALT    |                     None                      |    ALT    |    WIN    |   MO(1)  |   CTL   |
+// --------------------------------------------------------------------------------------------------------------------------------
+			bindings = <
+	&gresc  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none      &kp BSPC
+	&kp TAB  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none        &none
+	&kp CLCK  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none    &none               &none
+	&kp LSHFT   &none  &none  &none  &none  &none  &none  &none  &none     &none   &none              &kp RSHFT
+	&kp LCTRL &kp LGUI &kp LALT             &none                         &kp RALT  &kp RGUI  &mo 1   &kp RCTRL
+			>;
+			status = "disabled";
 		};
 	};
 };
