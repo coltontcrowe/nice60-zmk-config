@@ -48,15 +48,15 @@
 		layer_mvmt {
 // --------------------------------------------------------------------------------------------------------------------------------
 // |  None |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |   None   |
-// |  TAB    |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |   None  |  None |  None  |
-// |  CAPS    |  None  |  None  |  None  |  None  |  None  |  None  |  Left  |  Down  |   Up   |  Right |  None  |      None      |
+// |  TAB    |  None  |  None  |  PgUp  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |   None  |  None |  None  |
+// |  CAPS    |  None  |  HOME  |  PgDn  |  END   |  None  |  None  |  Left  |  Down  |   Up   |  Right |  None  |      None      |
 // | RLT(SHIFT,prev)  |  SLck |  SysRq |  PauBr  |  PScrn |  None  |  None  |  None  |  None  |  None  |  None  | RLT(SHIFT,next) |
 // |   CTL    |    WIN   |    ALT    |                     None                      |    ALT    |    WIN    |   CAPS   |   CTL   |
 // --------------------------------------------------------------------------------------------------------------------------------
 			bindings = <
 	&none    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none            &none
-	&kp TAB   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none           &none
-	&kp CLCK   &none  &none  &none  &none  &none  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none    &none       &none
+	&kp TAB   &none  &none  &kp PG_UP &none  &none  &none  &none  &none  &none  &none  &none     &none        &none
+	&kp CLCK  &none  &kp HOME  &kp PG_DN &kp END &none  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none  &none   &none
 	&rlt LSHFT 0 &kp SLCK &kp SYSREQ &kp PAUSE_BREAK &kp PSCRN &none  &none  &none  &none  &none &none &rlt RSHFT 0
 	&kp LCTRL  &kp LGUI &kp LALT             &none                         &kp RALT  &kp RGUI  &kp CLCK   &kp RCTRL
 			>;
