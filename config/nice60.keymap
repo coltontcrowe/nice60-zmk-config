@@ -62,6 +62,23 @@
 			>;
 		};
 
+		layer_num {
+// --------------------------------------------------------------------------------------------------------------------------------
+// |  None |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |   None   |
+// |  TAB    |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |   None  |  None |  None  |
+// |  None    |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |      None      |
+// | RLT(SHIFT,prev)  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  | RLT(SHIFT,next) |
+// |   CTL    |    WIN   |    ALT    |                     None                      |    ALT    |    WIN    |   None   |   CTL   |
+// --------------------------------------------------------------------------------------------------------------------------------
+			bindings = <
+	&none    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none          &none
+	&kp TAB   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none         &none
+	&none      &none  &none  &none  &none  &none  &none  &none  &none  &none  &none    &none                &none
+	&rlt LSHFT 1 &none  &none  &none  &none  &none  &none  &none  &none     &none   &none            &rlt RSHFT 3
+	&kp LCTRL  &kp LGUI &kp LALT             &none                         &kp RALT  &kp RGUI  &none    &kp RCTRL
+			>;
+		};
+
 		layer_kb_ctrl {
 // --------------------------------------------------------------------------------------------------------------------------------
 // | BT CLR |  BT 1  |  BT 2  |  BT 3  |  BT 4  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None   |
@@ -74,7 +91,7 @@
 	&bt BT_CLR    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &none    &none    &none    &none    &none    &none    &none    &none      &none
 	&kp TAB        &none      &none      &none      &none      &none      &none      &none      &none       &none       &none       &none       &none       &none
 	&none &rgb_ug RGB_SPD &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &none &none &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &none &none
-	&rlt LSHFT 1    &none    &none    &none    &rgb_ug RGB_EFR    &rgb_ug RGB_TOG    &rgb_ug RGB_EFF    &none    &none    &none    &none             &rlt RSHFT 3
+	&rlt LSHFT 2    &none    &none    &none    &rgb_ug RGB_EFR    &rgb_ug RGB_TOG    &rgb_ug RGB_EFF    &none    &none    &none    &none             &rlt RSHFT 4
 	&kp LCTRL        &kp LGUI        &kp LALT                             &none                            &kp RALT        &kp RGUI        &none        &kp RCTRL
 			>;
 		};
@@ -91,7 +108,7 @@
 	&none     &none   &none   &none    &none    &none   &none    &none   &none    &none    &none   &none     &none           &none
 	&kp TAB   &none   &none   &none   &kp C_STOP  &kp C_SLOW  &kp C_FF  &kp C_REC  &none   &none   &none   &none    &none    &none
 	&none  &none &kp C_BRI_DN &kp C_PREV &kp C_VOL_DN &kp C_MUTE &kp C_PP &kp C_VOL_UP &kp C_NEXT &kp C_BRI_UP &none  &none  &none
-	&rlt LSHFT 2  &none   &none   &kp C_CAPTIONS  &kp C_RW  &none  &kp C_SNAPSHOT   &none   &none    &none    &none   &rlt RSHFT 4
+	&rlt LSHFT 3  &none   &none   &kp C_CAPTIONS  &kp C_RW  &none  &kp C_SNAPSHOT   &none   &none    &none    &none   &rlt RSHFT 5
 	&kp LCTRL   &kp LGUI  &kp LALT                         &none                         &kp RALT   &kp RGUI   &none     &kp RCTRL
 			>;
 		};
@@ -108,7 +125,7 @@
 	&none   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none     &none
 	&none    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none    &none
 	&none     &none  &none  &none  &none  &none  &none  &none  &none  &none  &none    &none           &none
-	&to 3       &none  &none  &none  &none  &none  &none  &none  &none     &none   &none              &to 0
+	&to 4       &none  &none  &none  &none  &none  &none  &none  &none     &none   &none              &to 0
 	&none     &none    &none                &none                         &none     &none     &none   &none
 			>;
 		};
