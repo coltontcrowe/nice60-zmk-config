@@ -67,15 +67,15 @@
 // | BT CLR |  BT 1  |  BT 2  |  BT 3  |  BT 4  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None   |
 // |  TAB    |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |   None  |  None |  None  |
 // |  None    | SPDDN | BRIDN |  SATDN  |  HUEDN  |  None  |  None  |  HUEUP  |  SATUP  |  BRIUP  | SPDUP | None |      None      |
-// | RLT(SHIFT,prev)  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  | RLT(SHIFT,next) |
+// | RLT(SHIFT,prev)  |  None  |  None | None | Effect Rev | Tog RGB | Effect Fwd | None | None | None |  None  | RLT(SHIFT,next) |
 // |   CTL    |    WIN   |    ALT    |                     None                      |    ALT    |    WIN    |   NONE   |   CTL   |
 // --------------------------------------------------------------------------------------------------------------------------------
 			bindings = <
-	&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none &none &none &none &none &none &none &none &none
-	&kp TAB    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none       &none
+	&bt BT_CLR    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &none    &none    &none    &none    &none    &none    &none    &none      &none
+	&kp TAB        &none      &none      &none      &none      &none      &none      &none      &none       &none       &none       &none       &none       &none
 	&none &rgb_ug RGB_SPD &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &none &none &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &none &none
-	&rlt LSHFT 1 &none  &none  &none  &none  &none  &none  &none  &none     &none   &none          &rlt RSHFT 0
-	&kp LCTRL  &kp LGUI &kp LALT             &none                         &kp RALT  &kp RGUI  &none  &kp RCTRL
+	&rlt LSHFT 1    &none    &none    &none    &rgb_ug RGB_EFR    &rgb_ug RGB_TOG    &rgb_ug RGB_EFF    &none    &none    &none    &none             &rlt RSHFT 0
+	&kp LCTRL        &kp LGUI        &kp LALT                             &none                            &kp RALT        &kp RGUI        &none        &kp RCTRL
 			>;
 		};
 
