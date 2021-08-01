@@ -82,17 +82,17 @@
 		layer_dev_ctrl {
 // --------------------------------------------------------------------------------------------------------------------------------
 // |  None |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |   None   |
-// |  TAB    |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |   None  |  None |  None  |
-// |  None    |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |      None      |
-// | RLT(SHIFT,prev)  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  |  None  | RLT(SHIFT,next) |
+// |  TAB    |  None  |  None  |  None  | Stop |  Slow  |  Ffwd  |  Record  |  None  |  None  |  None  |   None  |  None |  None  |
+// |  None    |  None  |  BriDn |  Prev  | VolDn |  Mute  | Play/Pause | VolUp | Next | BriUp  |  None  |  None  |      None      |
+// | RLT(SHIFT,prev)  |  None  |  None  | Caption |  RW   |  None  |  Snap  |  None  |  None  |  None  |  None  | RLT(SHIFT,next) |
 // |   CTL    |    WIN   |    ALT    |                     None                      |    ALT    |    WIN    |   None   |   CTL   |
 // --------------------------------------------------------------------------------------------------------------------------------
 			bindings = <
-	&none    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none           &none
-	&kp TAB   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none     &none          &none
-	&none      &none  &none  &none  &none  &none  &none  &none  &none  &none  &none    &none                 &none
-	&rlt LSHFT 2 &none  &none  &none  &none  &none  &none  &none  &none     &none   &none             &rlt RSHFT 0
-	&kp LCTRL  &kp LGUI &kp LALT             &none                         &kp RALT  &kp RGUI  &none     &kp RCTRL
+	&none     &none   &none   &none    &none    &none   &none    &none   &none    &none    &none   &none     &none           &none
+	&kp TAB   &none   &none   &none   &kp C_STOP  &kp C_SLOW  &kp C_FF  &kp C_REC  &none   &none   &none   &none    &none    &none
+	&none  &none &kp C_BRI_DN &kp C_PREV &kp C_VOL_DN &kp C_MUTE &kp C_PP &kp C_VOL_UP &kp C_NEXT &kp C_BRI_UP &none  &none  &none
+	&rlt LSHFT 2  &none   &none   &kp C_CAPTIONS  &kp C_RW  &none  &kp C_SNAPSHOT   &none   &none    &none    &       &rlt RSHFT 0
+	&kp LCTRL   &kp LGUI  &kp LALT                         &none                         &kp RALT   &kp RGUI   &none     &kp RCTRL
 			>;
 		};
 
